@@ -1,5 +1,6 @@
 import 'package:my_app/main.dart';
 import 'package:flutter/material.dart';
+import 'package:my_app/page/to_do_page.dart';
 
 void main() {
   runApp(const MyFormPage());
@@ -28,7 +29,7 @@ class _MyFormPageState extends State<MyFormPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Form'),
+        title: Text('To Do'),
       ),
       drawer: Drawer(
         child: Column(
@@ -51,6 +52,16 @@ class _MyFormPageState extends State<MyFormPage> {
                 Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(builder: (context) => const MyFormPage()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('To Do'),
+              onTap: () {
+                // Route menu ke halaman to do
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ToDoPage()),
                 );
               },
             ),
